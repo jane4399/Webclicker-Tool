@@ -168,7 +168,7 @@ class WebclickerAutomator:
             # Look for buttons with letters A-E
             letter_buttons = []
             for button in self.driver.find_elements(By.TAG_NAME, "button"):
-                if button.text.strip() in ["A", "B", "C", "D", "E"]:
+                if button.text.strip() in ["A", "B"]:
                     letter_buttons.append(button)
             
             return len(answer_buttons) > 0 or len(letter_buttons) > 0
@@ -197,7 +197,7 @@ class WebclickerAutomator:
                 # If no elements found with the above selectors, look for buttons with text A-E
                 for button in self.driver.find_elements(By.TAG_NAME, "button"):
                     button_text = button.text.strip()
-                    if button_text in ["A", "B", "C", "D", "E"]:
+                    if button_text in ["A", "B"]:
                         choices.append((button, button_text))
             else:
                 for element in choice_elements:
